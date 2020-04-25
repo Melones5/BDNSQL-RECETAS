@@ -1,0 +1,29 @@
+version: '3'
+services: 
+    frontend:
+        container_name: front-app
+        build:
+            context: ./front
+            dockerfile: Dockerfile
+        ports: 
+            - '8080:8080'
+        volumes: 
+            - ./front:/src/app
+        tty: true
+    backend: 
+        container_name: back-app
+        build: 
+            context: ./api/backend
+            dockerfile: Dockerfile
+        ports:
+            - '3000:3000'
+        volumes: 
+            - ./api/backend:/src/app
+        links:
+            - "db:redis"
+    db:
+        image: redis
+        ports: 
+            - "6379:6379"
+    
+    

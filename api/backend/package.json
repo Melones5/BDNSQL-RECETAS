@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "back-recetas",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Alexis Santos",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "redis": "^3.0.2",
+    "nodemon": "*"
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}
